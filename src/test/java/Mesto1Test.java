@@ -4,10 +4,9 @@ import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.DisplayName;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
+import static org.apache.http.HttpStatus.SC_OK;
 
 public class Mesto1Test {
 
@@ -35,7 +34,6 @@ public class Mesto1Test {
     @Description("This test is for liking the first photo on Mesto.")
     public void likeTheFirstPhoto() {
         String photoId = getTheFirstPhotoId();
-
         likePhotoById(photoId);
         deleteLikePhotoById(photoId);
     }
